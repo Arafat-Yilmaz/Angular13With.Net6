@@ -1,0 +1,14 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product">
+   <div>
+      Brand: {{ product.make }}
+      Model: {{ product.model}}
+      Price: {{ product.price}}
+      Year: {{ product.year_model}}
+      Added Date: {{ product.date_added}}
+   </div>
+  
+    
+  <button (click)="addToCart(product)">Buy</button>
+</div>

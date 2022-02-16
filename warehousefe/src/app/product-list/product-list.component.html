@@ -1,0 +1,31 @@
+
+<div class="split left">
+    
+  <div class="centered" >
+      <h2>    All Cars :Brand - Model - Price - Date Added(asc) </h2>
+      <cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
+          <div *cdkVirtualFor="let product of products" class="example-item"> 
+              {{ product.make }} - 
+              {{ product.model }} - 
+              {{ product.price }} - 
+              {{product.date_added}}</div>
+        </cdk-virtual-scroll-viewport>
+</div>
+</div>
+
+<div class="split right">
+  <div class="centered">
+<h2>    Licensed Cars :Brand - Model - Price </h2>
+<div  *ngFor="let product of products"> 
+  <a *ngIf="product.licensed">
+ 
+      <a [routerLink]="['/products', product.vehicleId]" >
+        
+        {{ product.make }} - 
+        {{ product.model }} - 
+        {{ product.price }}
+      </a>
+  </a>
+</div>
+</div>
+</div>
